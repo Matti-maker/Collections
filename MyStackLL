@@ -1,0 +1,127 @@
+import java.util.EmptyStackException;
+
+/**
+ * A stack backed by a fixed size array.
+ * Elements come off in last in, first out order.
+ *
+ * @param <E> the type of elements stored in the stack
+ */
+public class MyStackLL<E>
+{
+    // bottom of the stack is index 0, top is index count - 1
+    private MyLinkedList myStackLL;
+    // number of elements in the stack, also the next open slot
+    private int count;
+
+    /**
+     * Constructs a stack that can hold 100 elements.
+     */
+    public MyStackLL()
+    {
+        myStackLL = new MyLinkedList();
+        count = 0;
+    }
+
+    /**
+     * Constructs a stack that can hold maxSize elements.
+     *
+     * @param maxSize the maximum number of elements the stack can hold
+     */
+
+    /**
+     * Pushes an element on to the top of the stack.
+     *
+     * @param element the value to push
+     * @throws IllegalStateException if the stack is full
+     */
+    public void push(E element)
+    {
+        try
+        {
+            // writing past the end of the array means the stack is full
+            myStackLL.addHead(element);
+            count++;
+        }
+        catch (ArrayIndexOutOfBoundsException e)
+        {
+            throw new IllegalStateException("Stack is full");
+        }
+    }
+
+    /**
+     * Pops the element off the top of the stack.
+     *
+     * @return the element that was on top
+     * @throws EmptyStackException if the stack is empty
+     */
+    public E pop()
+    {
+        try
+        {
+            // reading index -1 means the stack is empty
+            myStackLL.removeHead();
+        }
+        catch (ArrayIndexOutOfBoundsException e)
+        {
+            throw new EmptyStackException();
+        }
+    }
+
+    /**
+     * Indicates whether the stack contains any elements.
+     *
+     * @return true if the stack is empty, false otherwise
+     */
+    public boolean isEmpty()
+    {
+        return count == 0;
+    }
+
+    /**
+     * Reads the element at the top of the stack without removing it.
+     *
+     * @return the element on top
+     * @throws EmptyStackException if the stack is empty
+     */
+    public E top()
+    {
+        try
+        {
+            return myStackLL.getHead();
+        }
+        catch (ArrayIndexOutOfBoundsException e)
+        {
+            throw new EmptyStackException();
+        }
+    }
+
+    /**
+     * Returns the number of elements stored in the stack.
+     *
+     * @return the number of elements in the stack
+     */
+    public int size()
+    {
+        return count;
+    }
+
+    /**
+     * Indicates whether the stack has used up all of its storage.
+     *
+     * @return true if the stack is full, false otherwise
+     */
+    public boolean isFull()
+    {
+        return isEmpty() == false;
+    }
+
+    /**
+     * Returns the contents of the stack from top to bottom.
+     *
+     * @return the elements of the stack separated by spaces, top first
+     */
+    public String toString()
+    {
+        myStackLL.toString();
+    }
+}
