@@ -1,127 +1,83 @@
-import java.util.EmptyStackException;
+import java.util.NoSuchElementException;
 
 /**
- * A stack backed by a fixed size array.
- * Elements come off in last in, first out order.
+ * A queue backed by a linked list.
+ * Elements come off in first in, first out order.
  *
- * @param <E> the type of elements stored in the stack
+ * @param <E> the type of elements stored in the queue
  */
-public class MyStackLL<E>
+public class MyQueueLL<E>
 {
-    // bottom of the stack is index 0, top is index count - 1
-    private MyLinkedList myStackLL;
-    // number of elements in the stack, also the next open slot
-    private int count;
+    // the front of the queue is the head of the list, the back is the tail
+    private MyLinkedList<E> myQueueLL;
 
     /**
-     * Constructs a stack that can hold 100 elements.
+     * Constructs a dynamic queue.
      */
-    public MyStackLL()
+    public MyQueueLL()
     {
-        myStackLL = new MyLinkedList();
-        count = 0;
+        myQueueLL = new MyLinkedList<E>();
     }
 
     /**
-     * Constructs a stack that can hold maxSize elements.
+     * Adds an element to the back of the queue.
      *
-     * @param maxSize the maximum number of elements the stack can hold
+     * @param element the value to add
      */
-
-    /**
-     * Pushes an element on to the top of the stack.
-     *
-     * @param element the value to push
-     * @throws IllegalStateException if the stack is full
-     */
-    public void push(E element)
+    public void enqueue(E element)
     {
-        try
-        {
-            // writing past the end of the array means the stack is full
-            myStackLL.addHead(element);
-            count++;
-        }
-        catch (ArrayIndexOutOfBoundsException e)
-        {
-            throw new IllegalStateException("Stack is full");
-        }
+        myQueueLL.addTail(element);
     }
 
     /**
-     * Pops the element off the top of the stack.
+     * Removes an element from the front of the queue.
      *
-     * @return the element that was on top
-     * @throws EmptyStackException if the stack is empty
+     * @return the element that was at the front
+     * @throws NoSuchElementException if the queue is empty
      */
-    public E pop()
+    public E dequeue()
     {
-        try
-        {
-            // reading index -1 means the stack is empty
-            myStackLL.removeHead();
-        }
-        catch (ArrayIndexOutOfBoundsException e)
-        {
-            throw new EmptyStackException();
-        }
+        return myQueueLL.removeHead();
     }
 
     /**
-     * Indicates whether the stack contains any elements.
+     * Indicates whether the queue contains any elements.
      *
-     * @return true if the stack is empty, false otherwise
+     * @return true if the queue is empty, false otherwise
      */
     public boolean isEmpty()
     {
-        return count == 0;
+        return myQueueLL.isEmpty();
     }
 
     /**
-     * Reads the element at the top of the stack without removing it.
+     * Reads the element at the front of the queue without removing it.
      *
-     * @return the element on top
-     * @throws EmptyStackException if the stack is empty
+     * @return the element at the front
+     * @throws NoSuchElementException if the queue is empty
      */
-    public E top()
+    public E front()
     {
-        try
-        {
-            return myStackLL.getHead();
-        }
-        catch (ArrayIndexOutOfBoundsException e)
-        {
-            throw new EmptyStackException();
-        }
+        return myQueueLL.getHead();
     }
 
     /**
-     * Returns the number of elements stored in the stack.
+     * Returns the number of elements stored in the queue.
      *
-     * @return the number of elements in the stack
+     * @return the number of elements in the queue
      */
     public int size()
     {
-        return count;
+        return myQueueLL.size();
     }
 
     /**
-     * Indicates whether the stack has used up all of its storage.
+     * Returns the contents of the queue from front to back.
      *
-     * @return true if the stack is full, false otherwise
-     */
-    public boolean isFull()
-    {
-        return isEmpty() == false;
-    }
-
-    /**
-     * Returns the contents of the stack from top to bottom.
-     *
-     * @return the elements of the stack separated by spaces, top first
+     * @return the elements of the queue separated by commas, front first
      */
     public String toString()
     {
-        myStackLL.toString();
+        return myQueueLL.toString();
     }
 }
