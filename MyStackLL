@@ -1,51 +1,33 @@
 import java.util.EmptyStackException;
+import java.util.NoSuchElementException;
 
 /**
- * A stack backed by a fixed size array.
+ * A stack backed by a linked list.
  * Elements come off in last in, first out order.
  *
  * @param <E> the type of elements stored in the stack
  */
 public class MyStackLL<E>
 {
-    // bottom of the stack is index 0, top is index count - 1
-    private MyLinkedList myStackLL;
-    // number of elements in the stack, also the next open slot
-    private int count;
+    // the top of the stack is the head of the list
+    private MyLinkedList<E> myStackLL;
 
     /**
-     * Constructs a stack that can hold 100 elements.
+     * Constructs a dynamic stack.
      */
     public MyStackLL()
     {
-        myStackLL = new MyLinkedList();
-        count = 0;
+        myStackLL = new MyLinkedList<E>();
     }
-
-    /**
-     * Constructs a stack that can hold maxSize elements.
-     *
-     * @param maxSize the maximum number of elements the stack can hold
-     */
 
     /**
      * Pushes an element on to the top of the stack.
      *
      * @param element the value to push
-     * @throws IllegalStateException if the stack is full
      */
     public void push(E element)
     {
-        try
-        {
-            // writing past the end of the array means the stack is full
-            myStackLL.addHead(element);
-            count++;
-        }
-        catch (ArrayIndexOutOfBoundsException e)
-        {
-            throw new IllegalStateException("Stack is full");
-        }
+        myStackLL.addHead(element);
     }
 
     /**
@@ -58,10 +40,9 @@ public class MyStackLL<E>
     {
         try
         {
-            // reading index -1 means the stack is empty
-            myStackLL.removeHead();
+            return myStackLL.removeHead();
         }
-        catch (ArrayIndexOutOfBoundsException e)
+        catch (NoSuchElementException e)
         {
             throw new EmptyStackException();
         }
@@ -74,7 +55,7 @@ public class MyStackLL<E>
      */
     public boolean isEmpty()
     {
-        return count == 0;
+        return myStackLL.isEmpty();
     }
 
     /**
@@ -89,7 +70,7 @@ public class MyStackLL<E>
         {
             return myStackLL.getHead();
         }
-        catch (ArrayIndexOutOfBoundsException e)
+        catch (NoSuchElementException e)
         {
             throw new EmptyStackException();
         }
@@ -102,26 +83,16 @@ public class MyStackLL<E>
      */
     public int size()
     {
-        return count;
-    }
-
-    /**
-     * Indicates whether the stack has used up all of its storage.
-     *
-     * @return true if the stack is full, false otherwise
-     */
-    public boolean isFull()
-    {
-        return isEmpty() == false;
+        return myStackLL.size();
     }
 
     /**
      * Returns the contents of the stack from top to bottom.
      *
-     * @return the elements of the stack separated by spaces, top first
+     * @return the elements of the stack separated by commas, top first
      */
     public String toString()
     {
-        myStackLL.toString();
+        return myStackLL.toString();
     }
 }
