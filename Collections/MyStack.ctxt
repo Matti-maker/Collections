@@ -1,0 +1,25 @@
+#BlueJ class context
+#Mon Oct 26 08:50:55 PDT 2026
+comment0.target=MyStack
+comment0.text=\r\n A stack backed by a fixed size array.\r\n Elements come off in last in, first out order.\r\n\r\n @param <E> the type of elements stored in the stack\r\n
+comment1.target=MyStack()
+comment1.text=\r\n Constructs a stack that can hold 100 elements.\r\n
+comment2.params=maxSize
+comment2.target=MyStack(int)
+comment2.text=\r\n Constructs a stack that can hold maxSize elements.\r\n\r\n @param maxSize the maximum number of elements the stack can hold\r\n
+comment3.params=element
+comment3.target=void push(java.lang.Object)
+comment3.text=\r\n Pushes an element on to the top of the stack.\r\n\r\n @param element the value to push\r\n @throws IllegalStateException if the stack is full\r\n
+comment4.target=java.lang.Object pop()
+comment4.text=\r\n Pops the element off the top of the stack.\r\n\r\n @return the element that was on top\r\n @throws EmptyStackException if the stack is empty\r\n
+comment5.target=boolean isEmpty()
+comment5.text=\r\n Indicates whether the stack contains any elements.\r\n\r\n @return true if the stack is empty, false otherwise\r\n
+comment6.target=java.lang.Object top()
+comment6.text=\r\n Reads the element at the top of the stack without removing it.\r\n\r\n @return the element on top\r\n @throws EmptyStackException if the stack is empty\r\n
+comment7.target=int size()
+comment7.text=\r\n Returns the number of elements stored in the stack.\r\n\r\n @return the number of elements in the stack\r\n
+comment8.target=boolean isFull()
+comment8.text=\r\n Indicates whether the stack has used up all of its storage.\r\n\r\n @return true if the stack is full, false otherwise\r\n
+comment9.target=java.lang.String toString()
+comment9.text=\r\n Returns the contents of the stack from top to bottom.\r\n\r\n @return the elements of the stack separated by spaces, top first\r\n
+numComments=10

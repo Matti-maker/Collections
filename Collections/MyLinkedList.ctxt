@@ -1,0 +1,14 @@
+#BlueJ class context
+#Mon Oct 26 08:50:54 PDT 2026
+comment0.target=MyLinkedList
+comment1.target=MyLinkedList()
+comment2.params=element
+comment2.target=void addHead(java.lang.Object)
+comment3.params=element
+comment3.target=void addTail(java.lang.Object)
+comment4.target=java.lang.Object removeHead()
+comment5.target=java.lang.Object getHead()
+comment6.target=boolean isEmpty()
+comment7.target=int size()
+comment8.target=java.lang.String toString()
+numComments=9

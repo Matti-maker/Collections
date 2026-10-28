@@ -1,0 +1,25 @@
+#BlueJ class context
+#Mon Oct 26 08:50:56 PDT 2026
+comment0.target=MyQueue
+comment0.text=\r\n A queue backed by a fixed size circular array.\r\n Elements come off in first in, first out order.\r\n\r\n @param <E> the type of elements stored in the queue\r\n
+comment1.target=MyQueue()
+comment1.text=\r\n Constructs a queue that can hold 100 elements.\r\n
+comment2.params=maxSize
+comment2.target=MyQueue(int)
+comment2.text=\r\n Constructs a queue that can hold maxSize elements.\r\n\r\n @param maxSize the maximum number of elements the queue can hold\r\n
+comment3.target=boolean isEmpty()
+comment3.text=\r\n Indicates whether the queue contains any elements.\r\n\r\n @return true if the queue is empty, false otherwise\r\n
+comment4.target=java.lang.Object front()
+comment4.text=\r\n Reads the element at the front of the queue without removing it.\r\n\r\n @return the element at the front\r\n @throws NoSuchElementException if the queue is empty\r\n
+comment5.target=int size()
+comment5.text=\r\n Returns the number of elements stored in the queue.\r\n\r\n @return the number of elements in the queue\r\n
+comment6.target=boolean isFull()
+comment6.text=\r\n Indicates whether the queue has used up all of its storage.\r\n\r\n @return true if the queue is full, false otherwise\r\n
+comment7.target=java.lang.String toString()
+comment7.text=\r\n Returns the contents of the queue from front to back.\r\n\r\n @return the elements of the queue separated by spaces, front first\r\n
+comment8.params=element
+comment8.target=void enqueue(java.lang.Object)
+comment8.text=\r\n Adds an element to the back of the queue.\r\n\r\n @param element the value to add\r\n @throws IllegalStateException if the queue is full\r\n
+comment9.target=java.lang.Object dequeue()
+comment9.text=\r\n Removes an element from the front of the queue.\r\n\r\n @return the element that was at the front\r\n @throws NoSuchElementException if the queue is empty\r\n
+numComments=10

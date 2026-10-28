@@ -1,0 +1,20 @@
+#BlueJ class context
+#Wed Oct 28 08:59:36 PDT 2026
+comment0.target=MyStackLL
+comment0.text=\r\n A stack backed by a linked list.\r\n Elements come off in last in, first out order.\r\n\r\n @param <E> the type of elements stored in the stack\r\n
+comment1.target=MyStackLL()
+comment1.text=\r\n Constructs a dynamic stack.\r\n
+comment2.params=element
+comment2.target=void push(java.lang.Object)
+comment2.text=\r\n Pushes an element on to the top of the stack.\r\n\r\n @param element the value to push\r\n
+comment3.target=java.lang.Object pop()
+comment3.text=\r\n Pops the element off the top of the stack.\r\n\r\n @return the element that was on top\r\n @throws EmptyStackException if the stack is empty\r\n
+comment4.target=boolean isEmpty()
+comment4.text=\r\n Indicates whether the stack contains any elements.\r\n\r\n @return true if the stack is empty, false otherwise\r\n
+comment5.target=java.lang.Object top()
+comment5.text=\r\n Reads the element at the top of the stack without removing it.\r\n\r\n @return the element on top\r\n @throws EmptyStackException if the stack is empty\r\n
+comment6.target=int size()
+comment6.text=\r\n Returns the number of elements stored in the stack.\r\n\r\n @return the number of elements in the stack\r\n
+comment7.target=java.lang.String toString()
+comment7.text=\r\n Returns the contents of the stack from top to bottom.\r\n\r\n @return the elements of the stack separated by commas, top first\r\n
+numComments=8

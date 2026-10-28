@@ -1,0 +1,20 @@
+#BlueJ class context
+#Wed Oct 28 08:59:37 PDT 2026
+comment0.target=MyQueueLL
+comment0.text=\r\n A queue backed by a linked list.\r\n Elements come off in first in, first out order.\r\n\r\n @param <E> the type of elements stored in the queue\r\n
+comment1.target=MyQueueLL()
+comment1.text=\r\n Constructs a dynamic queue.\r\n
+comment2.params=element
+comment2.target=void enqueue(java.lang.Object)
+comment2.text=\r\n Adds an element to the back of the queue.\r\n\r\n @param element the value to add\r\n
+comment3.target=java.lang.Object dequeue()
+comment3.text=\r\n Removes an element from the front of the queue.\r\n\r\n @return the element that was at the front\r\n @throws NoSuchElementException if the queue is empty\r\n
+comment4.target=boolean isEmpty()
+comment4.text=\r\n Indicates whether the queue contains any elements.\r\n\r\n @return true if the queue is empty, false otherwise\r\n
+comment5.target=java.lang.Object front()
+comment5.text=\r\n Reads the element at the front of the queue without removing it.\r\n\r\n @return the element at the front\r\n @throws NoSuchElementException if the queue is empty\r\n
+comment6.target=int size()
+comment6.text=\r\n Returns the number of elements stored in the queue.\r\n\r\n @return the number of elements in the queue\r\n
+comment7.target=java.lang.String toString()
+comment7.text=\r\n Returns the contents of the queue from front to back.\r\n\r\n @return the elements of the queue separated by commas, front first\r\n
+numComments=8
